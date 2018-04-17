@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "vmSize": "StandardNC6",
+    "vmPriority": "dedicated",
+    "scaleSettings": {
+      "autoScale": {
+        "minimumNodeCount": 1,
+        "maximumNodeCount": 1
+      }
+    },
+    "virtualMachineConfiguration": {
+      "publisher": "microsoft-ads",
+      "offer": "linux-data-science-vm-ubuntu",
+      "sku": "linuxdsvmubuntu",
+      "version": "latest"
+    },
+    "nodeSetup": {
+      "mountVolumes": {
+        "azureFileShares": [{
+          "accountName": "$AZURE_BATCHAI_STORAGE_ACCOUNT",
+          "azureFileUrl": "$AZURE_FILE_URL",
+          "credentials": {
+            "accountKey": "$AZURE_BATCHAI_STORAGE_KEY"
+          },
+          "relativeMountPath": "external"
+        }]
+      }
+    },
+    "userAccountSettings": {
+      "adminUserName": "$ADMIN_USERNAME",
+      "adminUserPassword": "$ADMIN_PASSWORD",
+      "adminUserSshPublicKey": "$ADMIN_SSH_KEY"
+    }
+ }
+}
