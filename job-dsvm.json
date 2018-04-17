@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/BatchAI/master/schemas/2017-09-01-preview/job.json",
+  "properties": {
+      "nodeCount": 1,
+      "customToolkitSettings": {
+          "commandLine": "cd $AZ_BATCHAI_INPUT_SCRIPT/lib/utils; sudo chmod +x make.sh; ./make.sh; python $AZ_BATCHAI_INPUT_SCRIPT/ctpn/demo.py"
+      },
+      "stdOutErrPathPrefix": "$AZ_BATCHAI_MOUNT_ROOT/external",
+      "inputDirectories": [{
+          "id": "SCRIPT",
+          "path": "$AZ_BATCHAI_MOUNT_ROOT/external/electric"
+      }],
+      "outputDirectories": [{
+          "id": "MODEL",
+          "pathPrefix": "$AZ_BATCHAI_MOUNT_ROOT/external/data/",
+          "pathSuffix": "results"
+      }]
+  }
+}
