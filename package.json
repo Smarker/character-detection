@@ -1,0 +1,24 @@
+{
+  "name": "character-detection",
+  "version": "1.0.0",
+  "description": "1. Create a directory called `electric` in `azure fileshare`\r 2. Upload `electric` folder in this repo to the `electric` folder in your fileshare\r 3. Set environment variables in `env.sh`\r 4. Create a cluster and jobs with `batchai`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smarker/character-detection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Smarker/character-detection/issues"
+  },
+  "homepage": "https://github.com/Smarker/character-detection#readme",
+  "dependencies": {
+    "fs-extra": "^5.0.0",
+    "lodash": "^4.17.5",
+    "xml2js": "^0.4.19"
+  }
+}
